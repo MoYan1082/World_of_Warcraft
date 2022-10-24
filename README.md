@@ -9,7 +9,7 @@ Online Judge地址：[R:魔兽世界终极版](http://cxsjsxmooc.openjudge.cn/te
 ### :lock:题目描述
 在魔兽世界中有两个阵营，西面是红魔军的司令部，东面是蓝魔军的司令部，在两个司令部中间有若干个城市。
 
-司令部可以使用自己的生命元来制造武士，武士被创造出来后会向着对面走去，若在中间的城市中遇到敌方的武士，两个武士会进行决斗。
+司令部可以使用自己阵营的生命元来制造武士，武士被创造出来后会向着对面走去，若在中间的城市中遇到敌方的武士，两个武士会进行决斗。
 
 每个武士有着不同的特性，并且可以拥有不同的武器，当然，武器也有不同的效果。
 
@@ -231,19 +231,22 @@ Case n:
 
 <details><summary>样例输入</summary>
 <p>
-```
+
+```cpp
 1
 20 1 10 10 1000
 20 20 30 10 20
 5 5 5 5 5
 ```
+
 </p>
 </details>
 
 
 <details><summary>样例输出</summary>
 <p>
-```
+
+```cpp
 Case 1:
 000:00 blue lion 1 born
 Its loyalty is 10
@@ -264,6 +267,7 @@ Its morale is 0.00
 002:10 blue dragon 2 reached red headquarter with 20 elements and force 5
 002:10 red headquarter was taken
 ```
+
 </p>
 </details>
 
@@ -282,3 +286,12 @@ int main() {
     return 0;
 }
 ```
+
+
+防止内存泄露：
+- 使用**智能指针** `std::shared_ptr<ClassName>`。
+传统指针如果不调用`delete`，会一直占有内存，而智能指针会自动撤销内存。
+
+代码中大量使用了**多态**：
+- 因为每个武士或武器虽然有不同的特性，但是仍然有不少共通的功能，所以使用多态可以减少很多代码。
+- 可以通过基类指针指向不同的派生类对象，便于其他函数操作。
