@@ -232,7 +232,7 @@ Case n:
 <details><summary>样例输入</summary>
 <p>
 
-```cpp
+```html
 1
 20 1 10 10 1000
 20 20 30 10 20
@@ -246,7 +246,7 @@ Case n:
 <details><summary>样例输出</summary>
 <p>
 
-```cpp
+```html
 Case 1:
 000:00 blue lion 1 born
 Its loyalty is 10
